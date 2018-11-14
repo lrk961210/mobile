@@ -1,2 +1,13 @@
-问题描述： a标签添加:hover，在ios上需要点击2次才能跳转
-解决方案： 使用js跳转代替a标签的跳转事件
+## 问题描述：
+a标签添加:hover，在ios上需要点击2次才能跳转
+
+##解决方案： 
+使用js跳转代替a标签的跳转事件
+
+```
+     $('a').on('click touchend', function(e) {
+        var el = $(this);
+        var link = el.attr('href');
+        window.location = link;
+    });
+```
